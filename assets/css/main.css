@@ -198,7 +198,7 @@ a{
         url('/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
 }
 h1,h2,h3,h4{
-    font-family:ËÎÌå,'Open Sans',sans-serif;
+    font-family:ï¿½ï¿½ï¿½ï¿½,'Open Sans',sans-serif;
     font-weight:800;
     font-style:normal
 }
@@ -939,6 +939,11 @@ html,body{
     margin:1.875rem auto;
     display:block
 }
+.post-content table img{
+    display:inline-block;
+    margin:.625rem auto;
+    vertical-align:middle
+}
 .post-content p,
 .post-content h1,
 .post-content h2,
@@ -1173,16 +1178,22 @@ html,body{
  }
  table{
      margin:3.125rem auto;
+     max-width:100%;
+     width:auto
  }
  @media only screen and (max-width:37.5rem){
      table{
-         display:none
+         display:block;
+         overflow-x:auto;
+         -webkit-overflow-scrolling:touch
      }
  }
  table th,
  table td{
      border:.125rem solid #ccc;
-     padding:.313rem
+     padding:.313rem;
+     text-align:center;
+     vertical-align:top
  }
  .tag-title{
      font-family:'Open Sans',sans-serif;

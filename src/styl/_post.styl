@@ -4,6 +4,10 @@
         max-width 100%
         margin rem(30px) auto
         display block
+    table img
+        display inline-block
+        margin rem(10px) auto
+        vertical-align middle
     p, h1, h2, h3, h4,ul,ol, .tags, iframe
         center(rem(800px))
         padding 0 rem(20px)
@@ -86,11 +90,17 @@
 
 table
     margin rem(50px) auto
+    max-width 100%
+    width auto
     +below(cut)
-        display none
+        display block
+        overflow-x auto
+        -webkit-overflow-scrolling touch
     th, td
         border rem(2px) solid #ccc
         padding rem(5px)
+        text-align center
+        vertical-align top
 
 .tag-title
     mainFont(300)
