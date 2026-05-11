@@ -6,8 +6,6 @@ image: '/assets/img/posts/r6s-oregon/image1.png'
 description: '基于《彩虹六号：围攻》「俄勒冈乡间屋宅」的深度关卡拆解，从动线、阻塞点、区域划分、掩体枪线到可破坏玩法，系统梳理R6S的关卡设计范式与战术博弈逻辑。'
 tags:
 - 关卡设计
-- 彩虹六号
-- FPS
 categories:
 - 星跃实战营
 ---
