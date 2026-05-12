@@ -49,21 +49,36 @@ categories:
 
 以下为3名玩家两个赛季各场比赛后的RP变化图：
 
-* Y10S4赛季
+* **Y10S4赛季**
 
-![](/assets/img/posts/r6s-rating/image7.png)
+<div class="figure-row">
+  <figure>
+    <img src="/assets/img/posts/r6s-rating/image7.png" alt="TestYou Y10S4">
+  </figure>
+  <figure>
+    <img src="/assets/img/posts/r6s-rating/image8.png" alt="Blessssu.Mas Y10S4">
+  </figure>
+  <figure>
+    <img src="/assets/img/posts/r6s-rating/image5.png" alt="Ritzao Y10S4">
+  </figure>
+</div>
 
-![](/assets/img/posts/r6s-rating/image8.png)
+* **Y11S1赛季（红线为Y10S4该玩家的最终分数）**
 
-![](/assets/img/posts/r6s-rating/image5.png)
-
-* Y11S1赛季（红线为Y10S4该玩家的最终分数）
-
-![TestYou Y11S1](/assets/img/posts/r6s-rating/image6.png)
-
-![Blessssu.Mas Y11S1](/assets/img/posts/r6s-rating/image3.png)
-
-![Ritzao Y11S1](/assets/img/posts/r6s-rating/image4.png)
+<div class="figure-row">
+  <figure>
+    <img src="/assets/img/posts/r6s-rating/image6.png" alt="TestYou Y11S1">
+    <figcaption>TestYou Y11S1</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/img/posts/r6s-rating/image3.png" alt="Blessssu.Mas Y11S1">
+    <figcaption>Blessssu.Mas Y11S1</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/img/posts/r6s-rating/image4.png" alt="Ritzao Y11S1">
+    <figcaption>Ritzao Y11S1</figcaption>
+  </figure>
+</div>
 
 区分不同分段，将每名玩家在Y11S1赛季的加减分情况整理如下表：
 
@@ -107,7 +122,7 @@ categories:
 
 * **总结**
 
-R6S的RP迭代规律：ΔRP与|MMR-RP|正相关。
+R6S的RP迭代规律：ΔRP与\|MMR-RP\|正相关。
 
 * **低分胜利加分多，失败扣分少；高分胜利加分相对少，失败扣分相对多。**&#x4D;MR与PR差距越大，胜利时获得的RP加分越多，失败时扣除的RP越少；当RP收敛至与技巧水平基本匹配后RP加减分幅度趋于稳定，进入稳定区间。
 
@@ -121,9 +136,16 @@ R6S的RP迭代规律：ΔRP与|MMR-RP|正相关。
 
 该部分通过绘制 3 名玩家 Y11S1 赛季单场 ΔRP 随比赛场次变化的散点图以及其抽象概念图，并结合前文分析结论，对 R6S 的 RP 迭代模型展开定性拆解。
 
-![合并散点图](/assets/img/posts/r6s-rating/image1.png)
-
-![各玩家散点图](/assets/img/posts/r6s-rating/image2.png)
+<div class="figure-row">
+  <figure>
+    <img src="/assets/img/posts/r6s-rating/image1.png" alt="合并散点图">
+    <figcaption>合并散点图</figcaption>
+  </figure>
+  <figure>
+    <img src="/assets/img/posts/r6s-rating/image2.png" alt="各玩家散点图">
+    <figcaption>各玩家散点图</figcaption>
+  </figure>
+</div>
 
 随着对局场次的累积，玩家 RP 整体呈现向 MMR 逐步收敛的趋势，二者差值 ∣MMR−RP∣ 随对局进行总体减小。因此，比赛场次的递增可近似视为 ∣MMR−RP∣ 的逐步缩小。
 
@@ -171,7 +193,7 @@ L_{\max}^{L} - \dfrac{L_{\max}^{L} - L_{\min}^{L}}{1 + e^{-k_L\left( \left| \mu 
 
 拆解思路：
 
-1. 通过游戏经验、数据规律、官方更新公告确定ΔRP与|μ−RP|有正相关关系
+1. 通过游戏经验、数据规律、官方更新公告确定ΔRP与\|μ−RP\|有正相关关系
 
 2. 通过观察总体加减分规律，结合散点图，抽象出S形趋势概念图
 
