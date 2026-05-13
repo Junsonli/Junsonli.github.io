@@ -36,7 +36,7 @@
             var tocCollapseBtn = document.getElementById('tocCollapseBtn');
             var article = document.getElementById('scroll');
 
-            var headings = article.querySelectorAll('h2, h3');
+            var headings = article.querySelectorAll('h1, h2, h3');
             if (headings.length === 0) {
                 tocSidebar.style.display = 'none';
                 document.querySelector('.post').style.marginLeft = '0';

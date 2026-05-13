@@ -1712,6 +1712,10 @@ html,body{
     background:#0562DC;
     color:#fff
 }
+.toc-h1 a{
+    font-weight:700;
+    font-size:15px
+}
 .toc-h2 a{
     font-weight:600
 }
