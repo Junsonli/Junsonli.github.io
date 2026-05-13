@@ -1117,7 +1117,9 @@ html,body{
      margin-top:0.3em
  }
  .post-content li>p:first-child{
-     margin-top:0
+     display:inline-block;
+     margin-top:0;
+     vertical-align:top
  }
  .post-content ul.post-list{
      padding:0;
