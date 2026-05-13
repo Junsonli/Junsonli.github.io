@@ -1113,7 +1113,8 @@ html,body{
  }
  .post-content ul,
  .post-content ol{
-     padding-left:2.5rem
+     padding-left:2.5rem;
+     margin-top:0.3em
  }
  .post-content ul.post-list{
      padding:0;
