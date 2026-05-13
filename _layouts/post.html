@@ -7,16 +7,17 @@
         <nav class="toc-sidebar" id="tocSidebar">
             <div class="toc-toggle" id="tocToggle">
                 <button class="toc-btn toc-collapse" id="tocCollapseBtn" title="收起/展开">&#171;</button>
-                <button class="toc-btn toc-top" id="tocTopBtn" title="到顶部">&#8593;</button>
-                <button class="toc-btn toc-bottom" id="tocBottomBtn" title="到底部">&#8595;</button>
+                <button class="toc-btn toc-nav" id="tocTopBtn" title="到顶部"><span class="toc-line"></span><span class="toc-arrow toc-arrow-up"></span></button>
+                <button class="toc-btn toc-nav" id="tocBottomBtn" title="到底部"><span class="toc-arrow toc-arrow-down"></span><span class="toc-line"></span></button>
             </div>
-            <div class="toc-content" id="tocContent">
-                <div class="toc-title">&#30446;&#24405;</div>
-                <ul class="toc-list" id="tocList"></ul>
+            <div class="toc-panel" id="tocPanel">
+                <div class="toc-content">
+                    <div class="toc-title">&#30446;&#24405;</div>
+                    <ul class="toc-list" id="tocList"></ul>
+                </div>
             </div>
         </nav>
         <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
-
             <article role="article" id="scroll" class="post-content" itemprop="articleBody">
                 {{ content }}
             </article>
@@ -30,7 +31,7 @@
         <script>
         (function() {
             var tocSidebar = document.getElementById('tocSidebar');
-            var tocContent = document.getElementById('tocContent');
+            var tocPanel = document.getElementById('tocPanel');
             var tocList = document.getElementById('tocList');
             var tocCollapseBtn = document.getElementById('tocCollapseBtn');
             var article = document.getElementById('scroll');
@@ -91,7 +92,31 @@
                 });
             }
 
-            window.addEventListener('scroll', updateActive);
+            var headerPost = document.querySelector('.header-post');
+            function updateTocPosition() {
+                if (!headerPost) return;
+                var bottom = headerPost.getBoundingClientRect().bottom;
+                if (bottom > 0) {
+                    tocSidebar.style.top = bottom + 'px';
+                    tocSidebar.style.height = 'calc(100vh - ' + bottom + 'px)';
+                } else {
+                    tocSidebar.style.top = '0';
+                    tocSidebar.style.height = '100vh';
+                }
+            }
+
+            var ticking = false;
+            window.addEventListener('scroll', function() {
+                if (!ticking) {
+                    window.requestAnimationFrame(function() {
+                        updateTocPosition();
+                        updateActive();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+            updateTocPosition();
             updateActive();
         })();
         </script>

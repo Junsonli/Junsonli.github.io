@@ -1,15 +1,33 @@
 <section class="share">
     <h3>Share</h3>
-    <a aria-label="Share on Twitter" href="https://twitter.com/intent/tweet?text=&quot;{{ page.twitter_text }}&quot;%20{{ site.url }}{{ page.url }}%20via%20&#64;{{ site.twitter_username }}&hashtags={% for tag in page.tags %}{{tag}},{% endfor %}"
-    onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;" title="Share on Twitter">
-        <svg class="icon icon-twitter"><use xlink:href="#icon-twitter"></use></svg>
-    </a>
-    <a aria-label="Share on Facebook"href="https://www.facebook.com/sharer/sharer.php?u={{ site.url }}{{ page.url }}"
-    onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;" title="Share on Facebook">
-        <svg class="icon icon-facebook"><use xlink:href="#icon-facebook"></use></svg>
-    </a>
-    <a aria-label="Share on weibo" href="http://v.t.sina.com.cn/share/share.php?url={{ site.url }}{{ page.url }}"
-    onclick="window.open(this.href, 'weibo-share', 'width=490,height=530');return false;" title="Share on weibo">
-        <svg class="icon icon-sina-weibo"><use xlink:href="#icon-sina-weibo"></use></svg>
+    <a href="javascript:void(0)" class="share-btn" onclick="copyToClipboard('{{ site.url }}{{ page.url }}')" title="复制链接">
+        <svg class="share-icon-link" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+        </svg>
+        <span>复制链接</span>
     </a>
 </section>
+<script>
+function copyToClipboard(text) {
+    var msg = '链接已复制';
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function() {
+            alert(msg);
+        }).catch(function() {
+            fallbackCopy(text, msg);
+        });
+    } else {
+        fallbackCopy(text, msg);
+    }
+}
+function fallbackCopy(text, msg) {
+    var input = document.createElement('input');
+    input.value = text;
+    document.body.appendChild(input);
+    input.select();
+    document.execCommand('copy');
+    document.body.removeChild(input);
+    alert(msg);
+}
+</script>
