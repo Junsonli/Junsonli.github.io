@@ -4,6 +4,17 @@
     <body>
         {% include svg-icons.html %}
         {% include header-post.html %}
+        <nav class="toc-sidebar" id="tocSidebar">
+            <div class="toc-toggle" id="tocToggle">
+                <button class="toc-btn toc-collapse" id="tocCollapseBtn" title="收起/展开">&#171;</button>
+                <button class="toc-btn toc-top" id="tocTopBtn" title="到顶部">&#8593;</button>
+                <button class="toc-btn toc-bottom" id="tocBottomBtn" title="到底部">&#8595;</button>
+            </div>
+            <div class="toc-content" id="tocContent">
+                <div class="toc-title">&#30446;&#24405;</div>
+                <ul class="toc-list" id="tocList"></ul>
+            </div>
+        </nav>
         <section class="post" itemscope itemtype="http://schema.org/BlogPosting">
 
             <article role="article" id="scroll" class="post-content" itemprop="articleBody">
@@ -15,5 +26,74 @@
             {% include comments.html %}
             {% include footer.html %}
         </section>
+
+        <script>
+        (function() {
+            var tocSidebar = document.getElementById('tocSidebar');
+            var tocContent = document.getElementById('tocContent');
+            var tocList = document.getElementById('tocList');
+            var tocCollapseBtn = document.getElementById('tocCollapseBtn');
+            var article = document.getElementById('scroll');
+
+            var headings = article.querySelectorAll('h2, h3');
+            if (headings.length === 0) {
+                tocSidebar.style.display = 'none';
+                document.querySelector('.post').style.marginLeft = '0';
+                return;
+            }
+
+            headings.forEach(function(heading, index) {
+                if (!heading.id) {
+                    heading.id = 'toc-heading-' + index;
+                }
+
+                var li = document.createElement('li');
+                li.className = 'toc-item toc-' + heading.tagName.toLowerCase();
+
+                var a = document.createElement('a');
+                a.href = '#' + heading.id;
+                a.textContent = heading.textContent;
+                a.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    document.getElementById(heading.id).scrollIntoView({ behavior: 'smooth' });
+                });
+
+                li.appendChild(a);
+                tocList.appendChild(li);
+            });
+
+            var collapsed = false;
+            tocCollapseBtn.addEventListener('click', function() {
+                collapsed = !collapsed;
+                tocSidebar.classList.toggle('toc-collapsed', collapsed);
+                tocCollapseBtn.innerHTML = collapsed ? '&#187;' : '&#171;';
+            });
+
+            document.getElementById('tocTopBtn').addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            document.getElementById('tocBottomBtn').addEventListener('click', function() {
+                window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+            });
+
+            function updateActive() {
+                var current = null;
+                headings.forEach(function(heading) {
+                    var rect = heading.getBoundingClientRect();
+                    if (rect.top <= 120) {
+                        current = heading.id;
+                    }
+                });
+
+                tocList.querySelectorAll('a').forEach(function(a) {
+                    a.classList.toggle('toc-active', current && a.getAttribute('href') === '#' + current);
+                });
+            }
+
+            window.addEventListener('scroll', updateActive);
+            updateActive();
+        })();
+        </script>
     </body>
 </html>
