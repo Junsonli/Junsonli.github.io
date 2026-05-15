@@ -2,7 +2,8 @@
 layout: post
 title: "Apex强化系统设计文档"
 date: 2026-04-24 00:00:00 +0800
-tag: 玩法设计
+tags: 玩法设计
+categories: 设计文档
 description: '以Apex大逃杀为基础，设计娱乐向强化玩法，涵盖局内解锁规则、拾取替换机制与各类强化效果设计'
 ---
 
