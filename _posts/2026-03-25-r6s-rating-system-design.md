@@ -125,9 +125,11 @@ categories:
   * **低分胜利加分多，失败扣分少；高分胜利加分相对少，失败扣分相对多。**&#x4D;MR与PR差距越大，胜利时获得的RP加分越多，失败时扣除的RP越少；当RP收敛至与技巧水平基本匹配后RP加减分幅度趋于稳定，进入稳定区间。
   * **扣分加分存在明显上下限**。
 
-[📎 「排名战 2.0」运作机制简易图《彩虹六号：围攻》 - 1.「排名战 2.0」运作机制简易图《彩虹六号：围攻》(Av1004042365,P1).mp4](/assets/attachments/rank20-mechanism.mp4)
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; margin: 1.5rem 0;">
+  <iframe src="//player.bilibili.com/player.html?bvid=BV1Px4y1q7Bq&page=1" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"></iframe>
+</div>
 
-> 视频来源：【「排名战 2.0」运作机制简易图《彩虹六号：围攻》】 https://www.bilibili.com/video/BV1Px4y1q7Bq/?share\_source=copy\_web\&vd\_source=22415eb282fb0ea188d1a07c8975d5d1
+> 视频来源：[【「排名战 2.0」运作机制简易图《彩虹六号：围攻》】](https://www.bilibili.com/video/BV1Px4y1q7Bq/)
 
 ## 1.3 模型定性拆解
 
